@@ -8,8 +8,7 @@ pre_title='temp'
 while(True):
     url = "http://www.inlive.co.kr/search/search.htm?keyword=%B3%BB%B8%E9%C0%B8%B7%CE%C0%C7+%C3%CA%B4%EB"
     headers = {'User-Agent' : ua.random}
-
-    r=requests.get(url)
+    r=requests.get(url,headers=headers)
     bs =BeautifulSoup(r.content.decode('euc-kr','replace'), "html.parser")
 
     t= bs.find_all('span', class_="music_name")
